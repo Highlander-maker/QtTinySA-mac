@@ -1,21 +1,58 @@
-# QtTinySA  
-![Main_screen](https://github.com/user-attachments/assets/20affe65-6e0c-4583-b8dd-2055c1cd5bd7)
+# QtTinySA-mac
 
-A Python 'TinySA Ultra' (and original 'TinySA') GUI programme using Qt5 and PyQt5. Designed to run in Linux but also works in mac (no testing)
-and Windows.
-  
-For information on how to install it and how to use some of the features, see the Wiki pages.
-https://github.com/g4ixt/QtTinySA/wiki
-  
-The code attempts to replicate some of the TinySA Ultra on-screen commands on the PC.
-Development and testing are now on Kubuntu 24.04LTS with Python 3.11.8 and PyQt5 using Spyder.
+This is a macOS-compatible version of [QtTinySA](https://github.com/g4ixt/QtTinySA), a graphical interface for the TinySA spectrum analyzer.  
+It provides real-time scanning, frequency range control, 2D/3D visualizations, and CSV export of spectrum data.
 
-'TinySA', 'TinySA Ultra' and the TinySA icon are trademarks of Erik Kaashoek and are used with his permission.
+## 🔧 Requirements
 
-TinySA commands are based on Erik's Python examples:
-http://athome.kaashoek.com/tinySA/python/
+- macOS (tested on Apple Silicon)
+- Python 3.10+
+- Conda (recommended)
 
-The serial communication commands are based on Martin's Python NanoVNA/TinySA Toolset
-https://github.com/Ho-Ro
+## 🚀 Quick Start
 
-The GUI is now designed for a 1024 x 768 screen but should maximise properly.  The GUI appearence may change significantly due to development.
+```bash
+# Clone the repository
+git clone https://github.com/Highlander-maker/QtTinySA-mac.git
+cd QtTinySA-mac
+
+# Create and activate conda environment
+conda create -n tinysa python=3.10
+conda activate tinysa
+
+# Install required Python packages
+pip install pyqt5 pyqtgraph pyopengl numpy platformdirs pyserial
+
+# Run the app
+python src/QtTinySA.py
+
+## 📊 Tips for Scanning
+
+- Set **Start/Stop Frequency** using the lower control bar.
+- Adjust **RBW** and **Points** to balance scan speed vs. resolution.
+- Enable **Max trace** to capture peaks.
+- Use **Markers** (M1/M2/M3) to highlight signal frequencies.
+- **CSV Export**: Not fully implemented — for now, manually read or screenshot data.
+
+---
+
+## 🧰 Useful Controls
+
+- **LNA** – Boosts weak signals (only when needed)
+- **Spur On** – Suppresses internal clock harmonics
+- **Attenuator** – Protects input by reducing incoming signal level
+
+---
+
+## 🧠 Notes
+
+- Tested with **TinySA firmware v1.4-175**
+- Scan speed depends on your frequency span and settings
+- Best results using **USB cable connection** (not battery-powered)
+
+---
+
+## 🙏 Credits
+
+- Original project: [g4ixt/QtTinySA](https://github.com/g4ixt/QtTinySA)
+- macOS adaptation by [Highlander-maker](https://github.com/Highlander-maker)
